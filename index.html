@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en-GH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- EDIT: barbershop name (browser tab title) -->
+<title>Scissors Grooming — Premium Barbershop in Accra</title>
+<!-- EDIT: barbershop name / tagline (search + social preview) -->
+<meta name="description" content="Scissors Grooming is a premium barbershop in Accra for luxury fades, beard sculpting and hot towel shaves. Book on WhatsApp or walk in.">
+<meta name="theme-color" content="#0A0705">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GH">
+<!-- EDIT: barbershop name -->
+<meta property="og:title" content="Scissors Grooming — Premium Barbershop in Accra">
+<!-- EDIT: tagline -->
+<meta property="og:description" content="Luxury fades, beard sculpting and hot towel shaves. Book on WhatsApp or walk in.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='22'%20fill='%230A0705'/%3E%3Ctext%20x='50'%20y='72'%20font-family='Georgia,serif'%20font-size='62'%20font-weight='900'%20fill='%23C5A059'%20text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+
+<!-- Theme script -->
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('theme');
+    if (t !== 'light' && t !== 'dark') t = 'dark';
+    document.documentElement.setAttribute('data-theme', t);
+    var m = document.querySelector('meta[name="theme-color"]');
+    if (m) m.setAttribute('content', t === 'dark' ? '#0A0705' : '#F9F6F0');
+  } catch (e) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+})();
+</script>
+
+<style>
+:root{
+  color-scheme:dark;
+
+  /* Wood & Brass — Default (Dark) */
+  --bg:#0A0705;
+  --bg-deep:#050302;
+  --surface:#14100D;
+  --surface-2:#1C1612;
+  --line:#2E241C;
+  --line-soft:#231A14;
+  --text:#F4EBD9;
+  --text-soft:#C2B3A3;
+  --text-mute:#8C7D6E;
+  
+  --gold:#C5A059;
+  --gold-deep:#A68544;
+  --gold-soft:rgba(197,160,89,.15);
+  --gold-glow:rgba(197,160,89,.4);
+  --on-gold:#0A0705;
+
+  --shadow-sm:0 4px 14px rgba(0,0,0,.6);
+  --shadow:0 10px 28px rgba(0,0,0,.65);
+  --shadow-lg:0 20px 46px rgba(0,0,0,.8);
+  --radius:12px;
+  --wrap:1120px;
+  --ease:cubic-bezier(.25,.1,.25,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%;}
+body{margin:0;overflow-x:clip;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;font-size:1rem;line-height:1.6;-webkit-font-smoothing:antialiased;}
+h1,h2,h3{font-family:"Georgia","Times New Roman",serif;line-height:1.1;margin:0 0 .6rem;letter-spacing:-.01em;font-weight:normal;}
+p{margin:0 0 1rem;}
+address{font-style:normal;}
+svg{max-width:100%;}
+
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px;}
+.on-dark :focus-visible{outline-color:var(--gold);}
+
+/* ---------- Skip ---------- */
+.skip{position:absolute;left:1rem;top:-5rem;z-index:200;padding:.65rem 1.1rem;border-radius:0 0 12px 12px;background:var(--gold);color:var(--on-gold);font-weight:800;text-decoration:none;transition:top .18s var(--ease);}
+.skip:focus{top:0;}
+
+/* ---------- Layout ---------- */
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 1.15rem;}
+.section{padding:4rem 0;position:relative;}
+.section-tint{background:radial-gradient(70% 60% at 100% 0%, rgba(197,160,89,.05), transparent 65%),var(--surface);}
+.section h2{font-size:2rem;color:var(--text);margin:0 0 .55rem;letter-spacing:-.01em;}
+.section h2::after{content:"";display:block;width:3rem;height:2px;margin-top:.8rem;border-radius:2px;background:var(--gold);transform:scaleX(.3);transform-origin:left;transition:transform .9s var(--ease) .1s;}
+.section h2.in::after{transform:scaleX(1);}
+
+.eyebrow{margin:0 0 .5rem;color:var(--gold);font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.5rem;}
+.eyebrow::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--gold);display:inline-block;}
+.lede{max-width:56ch;margin:.85rem 0 2.5rem;color:var(--text-soft);font-size:1.05rem;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
+#top-sentinel{height:1px;margin-bottom:-1px;pointer-events:none;}
+
+/* ---------- Buttons ---------- */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:1rem 1.8rem;border:1px solid transparent;border-radius:4px;font-size:.95rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;cursor:pointer;overflow:hidden;transition:all .3s var(--ease);}
+.btn svg{width:18px;height:18px;flex:none;fill:currentColor;}
+.btn-gold{background:var(--gold);border-color:var(--gold);color:var(--on-gold);box-shadow:0 8px 20px rgba(197,160,89,.2);}
+.btn-gold::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);transform:skewX(-20deg);transition:left .7s var(--ease);}
+.btn-gold:hover{background:#D4B06A;border-color:#D4B06A;transform:translateY(-2px);box-shadow:0 12px 28px rgba(197,160,89,.3);}
+.btn-gold:hover::after{left:130%;}
+.btn-gold:active{transform:translateY(0);}
+
+/* ---------- Header / nav ---------- */
+.site-header{position:sticky;top:0;z-index:80;background:rgba(10,7,5,.9);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);transition:all .4s var(--ease);}
+.site-header::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.5;pointer-events:none;}
+.site-header.is-scrolled{background:rgba(10,7,5,.98);box-shadow:0 10px 30px rgba(0,0,0,.8);}
+.nav{position:relative;display:flex;align-items:center;gap:.5rem;min-height:4.5rem;max-width:var(--wrap);margin:0 auto;padding:.55rem 1.15rem;}
+.brand{display:inline-flex;align-items:center;gap:.55rem;color:var(--text);font-family:"Georgia",serif;font-size:1.3rem;font-weight:normal;letter-spacing:.05em;text-decoration:none;white-space:nowrap;flex:none;margin-right:auto;text-transform:uppercase;}
+.brand:hover{color:var(--gold);}
+
+.nav-actions{display:flex;align-items:center;gap:.5rem;flex:none;}
+
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;background:transparent;border:1px solid var(--line);border-radius:50%;color:var(--text);cursor:pointer;transition:all .25s var(--ease);flex:none;}
+.theme-toggle svg{width:16px;height:16px;}
+.theme-toggle:hover{background:var(--surface-2);border-color:var(--gold);color:var(--gold);}
+.theme-toggle .icon-sun{display:none;}
+.theme-toggle .icon-moon{display:block;}
+:root[data-theme="dark"] .theme-toggle .icon-sun{display:block;}
+:root[data-theme="dark"] .theme-toggle .icon-moon{display:none;}
+
+.nav-toggle{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem .8rem;background:transparent;border:1px solid var(--line);border-radius:4px;color:var(--text);font:inherit;font-size:.85rem;font-weight:600;cursor:pointer;transition:all .25s var(--ease);}
+.nav-toggle:hover{background:var(--surface-2);border-color:var(--gold);}
+.nav-toggle-icon,.nav-toggle-icon::before,.nav-toggle-icon::after{display:block;width:18px;height:1.5px;border-radius:2px;background:currentColor;transition:transform .3s var(--ease),opacity .2s var(--ease);}
+.nav-toggle-icon{position:relative;}
+.nav-toggle-icon::before,.nav-toggle-icon::after{content:"";position:absolute;left:0;}
+.nav-toggle-icon::before{top:-6px;}
+.nav-toggle-icon::after{top:6px;}
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon{background:transparent;}
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon::before{transform:translateY(6px) rotate(45deg);}
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon::after{transform:translateY(-6px) rotate(-45deg);}
+
+.nav-links{position:absolute;left:0;right:0;top:100%;display:none;flex-direction:column;margin:0;padding:.5rem 1.15rem 1.5rem;list-style:none;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 20px 40px rgba(0,0,0,.8);}
+.nav-links.is-open{display:flex;animation:panelIn .3s var(--ease) both;}
+.nav-links a{position:relative;display:block;padding:.8rem .25rem;color:var(--text);font-weight:500;letter-spacing:.05em;text-decoration:none;border-bottom:1px solid var(--line-soft);transition:all .2s var(--ease);}
+.nav-links li:last-child a{border-bottom:0;}
+.nav-links a:hover{color:var(--gold);padding-left:.55rem;}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;padding:4rem 0 5rem;color:var(--text);background:radial-gradient(ellipse at 50% 50%, rgba(20,16,13,1) 0%, rgba(10,7,5,1) 100%);}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.05"/></svg>');}
+.hero-inner{position:relative;z-index:2;}
+
+.hero-scissors{position:absolute;top:50%;right:-10%;transform:translateY(-50%);width:75vw;max-width:600px;height:auto;z-index:0;opacity:0.15;pointer-events:none;animation:floatScissors 15s ease-in-out infinite alternate;}
+.hero-scissors svg{fill:none;stroke:var(--gold);stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 15px rgba(197,160,89,0.3));}
+
+.hero-glow{position:absolute;inset:-15%;z-index:1;pointer-events:none;opacity:0;background:radial-gradient(400px circle at var(--mx,50%) var(--my,30%),rgba(197,160,89,.15),transparent 60%);transition:opacity 1s var(--ease);}
+
+.hero-status-row{margin:0 0 2rem;}
+.status{display:inline-flex;align-items:center;gap:.55rem;padding:.45rem 1rem;background:var(--surface-2);border:1px solid var(--line);border-radius:2px;font-size:.75rem;font-weight:600;color:var(--text-soft);letter-spacing:.05em;box-shadow:var(--shadow-sm);flex-wrap:wrap;max-width:100%;}
+.status-dot{width:6px;height:6px;border-radius:50%;background:var(--text-mute);flex:none;position:relative;}
+.status.is-open .status-dot{background:#6B8E23;animation:statusPulse 2.4s ease-out infinite;}
+.status.is-closed .status-dot{background:#8B0000;}
+.status-text{color:var(--text);}
+.status-sep{color:var(--line);}
+.status-clock{color:var(--text-mute);}
+
+.hero-title{margin:0 0 1.2rem;font-size:clamp(3rem,14vw,6.5rem);font-weight:400;letter-spacing:-.02em;line-height:.95;text-transform:uppercase;color:var(--text);text-shadow:0 4px 24px rgba(0,0,0,.8);}
+.hero-title span{color:var(--gold);font-style:italic;}
+.hero-tag{max-width:42ch;margin:0 0 2.5rem;color:var(--text-soft);font-size:1.1rem;font-weight:300;letter-spacing:.02em;}
+.hero-cta{display:flex;flex-direction:column;align-items:flex-start;gap:1rem;}
+.hero-note{margin:0;color:var(--text-mute);font-size:.85rem;letter-spacing:.05em;text-transform:uppercase;}
+
+.hero-facts{display:flex;flex-wrap:wrap;gap:.6rem .8rem;margin:2.5rem 0 0;padding:0;list-style:none;}
+.hero-facts li{padding:.4rem .9rem;background:transparent;border:1px solid var(--line-soft);color:var(--text-mute);font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;}
+
+.scroll-cue{position:relative;z-index:2;display:inline-flex;align-items:center;gap:.55rem;margin-top:3rem;color:var(--gold);font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;opacity:.7;transition:opacity .3s;}
+.scroll-cue:hover{opacity:1;}
+.scroll-cue span{display:block;width:1px;height:40px;background:linear-gradient(180deg,var(--gold),transparent);animation:cueDrop 2s ease-in-out infinite;transform-origin:top;}
+
+/* ---------- Marquee ---------- */
+.marquee{overflow:hidden;padding:1rem 0;background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.marquee-track{display:flex;width:max-content;animation:slide 40s linear infinite;}
+.marquee:hover .marquee-track{animation-play-state:paused;}
+.marquee-track span{padding:0 1.5rem;color:var(--gold);font-family:"Georgia",serif;font-size:.9rem;letter-spacing:.15em;text-transform:uppercase;white-space:nowrap;}
+.marquee-track span::after{content:"✧";margin-left:1.5rem;font-size:.8rem;opacity:.5;}
+
+/* ---------- Menu cards ---------- */
+.cards{display:grid;grid-template-columns:1fr;gap:1.2rem;margin:0;padding:0;list-style:none;}
+.card{position:relative;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow-sm);overflow:hidden;transition:all .4s var(--ease);}
+.card::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(197,160,89,.05),transparent);opacity:0;transition:opacity .4s;pointer-events:none;}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--gold-deep);}
+.card:hover::before{opacity:1;}
+.card.is-picked{border-color:var(--gold);box-shadow:0 10px 30px rgba(197,160,89,.1);}
+.card.is-picked::before{opacity:1;}
+
+.card-inner{position:relative;display:flex;flex-direction:column;height:100%;padding:1.8rem 1.5rem 1.5rem;}
+.card h3{position:relative;margin:0 0 .5rem;color:var(--text);font-size:1.3rem;}
+.card p{position:relative;margin:0 0 1.5rem;color:var(--text-soft);font-size:.95rem;font-weight:300;}
+.card-footer{position:relative;margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+
+.price{padding:.4rem .9rem;border:1px solid var(--gold-deep);background:transparent;color:var(--gold);font-family:"Georgia",serif;font-size:1.1rem;transition:all .3s;}
+.card.is-picked .price{background:var(--gold);color:var(--on-gold);}
+
+.qty{display:inline-flex;align-items:center;padding:2px;border:1px solid var(--line);border-radius:4px;background:var(--bg);transition:all .25s;}
+.card.is-picked .qty{border-color:var(--gold);}
+.qty-btn{width:34px;height:34px;display:grid;place-items:center;border:0;border-radius:2px;background:transparent;color:var(--text);font-size:1.1rem;font-weight:600;cursor:pointer;transition:all .2s;-webkit-tap-highlight-color:transparent;}
+.qty-btn.qty-inc{background:var(--surface-2);}
+.qty-btn.qty-inc:hover{background:var(--gold);color:var(--on-gold);}
+.qty-btn.qty-dec:hover:not(:disabled){background:var(--line);}
+.qty-btn:disabled{opacity:.3;cursor:not-allowed;}
+.qty-count{min-width:2rem;text-align:center;font-family:"Georgia",serif;font-size:1.1rem;color:var(--text);}
+.card.is-picked .qty-count{color:var(--gold);}
+
+/* ---------- Time picker ---------- */
+.time-pick{margin:2rem 0 0;padding:1.5rem;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow-sm);min-width:0;}
+.time-legend{padding:0 .5rem;font-family:"Georgia",serif;font-size:.9rem;color:var(--gold);font-style:italic;}
+.time-options{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.5rem;}
+.time-opt{position:relative;display:inline-block;}
+.time-opt input{position:absolute;opacity:0;width:0;height:0;pointer-events:none;}
+.time-opt span{display:inline-block;padding:.6rem 1.2rem;border:1px solid var(--line);background:transparent;color:var(--text-soft);font-size:.85rem;font-weight:500;letter-spacing:.05em;cursor:pointer;transition:all .2s;}
+.time-opt input:checked + span{border-color:var(--gold);color:var(--gold);}
+.time-opt input:focus-visible + span{outline:2px solid var(--gold);outline-offset:2px;}
+.time-note{margin:1rem 0 0;font-size:.8rem;color:var(--text-mute);font-style:italic;}
+
+/* ---------- Barbers ---------- */
+.barbers{display:grid;grid-template-columns:1fr;gap:1.2rem;margin:0;padding:0;list-style:none;}
+.barber-card{position:relative;padding:2rem 1.5rem;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow-sm);transition:all .4s var(--ease);overflow:hidden;text-align:center;}
+.barber-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%, rgba(197,160,89,.08), transparent 70%);opacity:0;transition:opacity .4s;pointer-events:none;}
+.barber-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--gold-deep);}
+.barber-card:hover::before{opacity:1;}
+.barber-avatar{width:80px;height:80px;border-radius:50%;display:grid;place-items:center;background:var(--surface-2);color:var(--gold);font-family:"Georgia",serif;font-size:1.5rem;margin:0 auto 1.2rem;border:1px solid var(--line);transition:all .4s;}
+.barber-card:hover .barber-avatar{border-color:var(--gold);box-shadow:0 0 20px rgba(197,160,89,.2);}
+.barber-card h3{margin:0 0 .3rem;color:var(--text);font-size:1.2rem;}
+.barber-role{margin:0 0 .8rem;color:var(--gold);font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;}
+.barber-note{margin:0;color:var(--text-soft);font-size:.95rem;font-style:italic;}
+
+/* ---------- Gallery ---------- */
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:0;padding:0;list-style:none;}
+.tile{position:relative;display:grid;place-items:center;min-height:10rem;padding:1rem;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:all .5s var(--ease);background:var(--surface-2);}
+.tile:hover{transform:scale(1.02);box-shadow:var(--shadow-lg);border-color:var(--gold);}
+.tile-content{position:relative;display:flex;flex-direction:column;align-items:center;gap:1rem;}
+.tile-icon{width:40px;height:40px;fill:none;stroke:var(--gold);stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;opacity:0.8;transition:all .4s;}
+.tile:hover .tile-icon{opacity:1;transform:scale(1.1);}
+.tile span{color:var(--text);font-family:"Georgia",serif;font-size:.95rem;letter-spacing:.05em;text-align:center;}
+
+/* ---------- Testimonials ---------- */
+.testimonials{display:grid;gap:1.2rem;margin:0;padding:0;list-style:none;}
+.testimonial-card{padding:1.8rem;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow-sm);}
+.testimonial-stars{color:var(--gold);font-size:1rem;margin-bottom:.8rem;letter-spacing:2px;}
+.testimonial-text{font-family:"Georgia",serif;font-size:1.1rem;font-style:italic;color:var(--text);margin-bottom:1.2rem;line-height:1.5;}
+.testimonial-author{display:flex;align-items:center;gap:1rem;}
+.testimonial-avatar{width:44px;height:44px;border-radius:50%;background:var(--surface-2);border:1px solid var(--line);color:var(--gold);display:grid;place-items:center;font-family:"Georgia",serif;font-size:1rem;}
+.testimonial-name{margin:0;font-size:.9rem;font-weight:600;color:var(--text);letter-spacing:.05em;}
+.testimonial-role{margin:0;font-size:.75rem;color:var(--text-mute);text-transform:uppercase;letter-spacing:.1em;}
+
+/* ---------- About ---------- */
+.about-block{position:relative;padding:.5rem 0 .5rem 1.5rem;border-left:2px solid var(--gold);}
+.about-block p{max-width:62ch;margin:0;font-family:"Georgia",serif;font-size:1.15rem;color:var(--text-soft);font-style:italic;line-height:1.7;}
+
+/* ---------- Hours ---------- */
+.hours{width:100%;max-width:28rem;border-collapse:collapse;border-radius:var(--radius);overflow:hidden;background:var(--surface);box-shadow:var(--shadow);}
+.hours th,.hours td{padding:1rem;text-align:left;border-bottom:1px solid var(--line-soft);font-size:.95rem;}
+.hours thead th{background:var(--surface-2);color:var(--gold);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;}
+.hours tbody th{font-weight:500;color:var(--text);}
+.hours tbody tr:last-child th,.hours tbody tr:last-child td{border-bottom:0;}
+.hours-note{max-width:46ch;margin:1.2rem 0 0;color:var(--text-mute);font-size:.9rem;font-style:italic;}
+
+/* ---------- Contact ---------- */
+.contact-card{position:relative;display:grid;gap:1.5rem;padding:2rem;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(160deg,var(--surface-2),var(--bg-deep));color:var(--text);box-shadow:var(--shadow-lg);overflow:hidden;}
+.contact-title{margin:0;color:var(--gold);font-family:"Georgia",serif;font-size:1.3rem;}
+.contact-list{display:grid;gap:1.2rem;margin:0;padding:0;list-style:none;}
+.contact-list li{display:flex;align-items:flex-start;gap:1rem;font-size:1rem;}
+.contact-list svg{flex:none;width:20px;height:20px;margin-top:.2rem;fill:var(--gold);}
+.contact-card a:not(.btn){color:var(--text);text-decoration:none;transition:color .2s;}
+.contact-card a:not(.btn):hover{color:var(--gold);}
+.contact-card .btn-gold{justify-self:start;}
+
+/* ---------- Footer ---------- */
+.site-footer{position:relative;overflow:hidden;padding:3rem 0 calc(3rem + 6rem + env(safe-area-inset-bottom));background:var(--bg-deep);color:var(--text-mute);border-top:1px solid var(--line);}
+.footer-inner{display:flex;flex-direction:column;align-items:flex-start;gap:.8rem;}
+.footer-name{margin:0;font-family:"Georgia",serif;font-size:1.8rem;letter-spacing:.05em;color:var(--text);text-transform:uppercase;}
+.footer-copy{margin:0;font-size:.85rem;letter-spacing:.05em;}
+.site-footer a{color:var(--gold);font-weight:500;text-decoration:none;transition:color .2s;}
+.site-footer a:hover{color:var(--text);}
+
+/* ---------- Floating WhatsApp ---------- */
+.fab{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom));z-index:90;display:grid;place-items:center;width:56px;height:56px;border:1px solid var(--gold);border-radius:50%;background:var(--gold);color:var(--on-gold);box-shadow:0 10px 24px rgba(0,0,0,.5);text-decoration:none;transition:all .3s var(--ease);}
+.fab::before{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--gold);animation:ring 3s ease-out infinite;pointer-events:none;opacity:.5;}
+.fab svg{width:26px;height:26px;fill:currentColor;}
+.fab:hover{background:#D4B06A;transform:translateY(-3px) scale(1.05);}
+body.has-selection .fab{display:none;}
+
+/* ---------- Selection bar ---------- */
+.selection-bar{position:fixed;left:0;right:0;bottom:0;z-index:95;display:none;padding:1rem 0 calc(1rem + env(safe-area-inset-bottom));background:var(--surface);color:var(--text);border-top:1px solid var(--gold);box-shadow:0 -10px 30px rgba(0,0,0,.8);}
+.selection-bar.is-active{display:block;animation:slideUpBar .4s var(--ease) both;}
+.selection-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;max-width:var(--wrap);margin:0 auto;padding:0 1.15rem;}
+.selection-info{display:flex;flex-direction:column;line-height:1.2;min-width:0;}
+.selection-count{font-size:.75rem;color:var(--text-soft);letter-spacing:.05em;text-transform:uppercase;}
+.selection-total{font-family:"Georgia",serif;font-size:1.4rem;color:var(--gold);}
+.selection-actions{display:flex;align-items:center;gap:.8rem;flex:none;}
+.selection-clear{padding:.6rem .8rem;background:transparent;border:0;color:var(--text-mute);font:inherit;font-size:.85rem;font-weight:500;cursor:pointer;transition:color .2s;}
+.selection-clear:hover{color:var(--text);}
+.selection-book{padding:.8rem 1.5rem;font-size:.9rem;background:var(--gold);color:var(--on-gold);border:0;border-radius:4px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;transition:all .3s;}
+.selection-book:hover{background:#D4B06A;}
+.selection-book:focus-visible{outline:2px solid var(--text);outline-offset:2px;}
+
+/* ---------- Reveal ---------- */
+.js .reveal{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:calc(var(--d,0) * 100ms);}
+.js .reveal.in{opacity:1;transform:none;}
+.cards > *:nth-child(2){--d:1;}
+.cards > *:nth-child(3){--d:2;}
+.cards > *:nth-child(4){--d:3;}
+.cards > *:nth-child(5){--d:4;}
+.cards > *:nth-child(6){--d:5;}
+.barbers > *:nth-child(2){--d:1;}
+.barbers > *:nth-child(3){--d:2;}
+.gallery > *:nth-child(2){--d:1;}
+.gallery > *:nth-child(3){--d:2;}
+.gallery > *:nth-child(4){--d:1;}
+.gallery > *:nth-child(5){--d:2;}
+.gallery > *:nth-child(6){--d:3;}
+
+/* ---------- Keyframes ---------- */
+@keyframes riseIn{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:none;}}
+@keyframes floatScissors{from{transform:translateY(-50%) rotate(5deg) scale(1);}to{transform:translateY(-55%) rotate(15deg) scale(1.03);}}
+@keyframes statusPulse{0%{box-shadow:0 0 0 0 rgba(107,142,35,.5);}70%{box-shadow:0 0 0 8px rgba(107,142,35,0);}100%{box-shadow:0 0 0 0 rgba(107,142,35,0);}}
+@keyframes slide{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@keyframes cueDrop{0%,100%{transform:scaleY(.3);opacity:.3;}50%{transform:scaleY(1);opacity:1;}}
+@keyframes panelIn{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:none;}}
+@keyframes ring{0%{transform:scale(1);opacity:.6;}80%,100%{transform:scale(1.4);opacity:0;}}
+@keyframes slideUpBar{from{transform:translateY(100%);}to{transform:none;}}
+
+.hero .rise{animation:riseIn 1s var(--ease) both;}
+.hero .rise:nth-child(2){animation-delay:.1s;}
+.hero .rise:nth-child(3){animation-delay:.2s;}
+.hero .rise:nth-child(4){animation-delay:.3s;}
+.hero .rise:nth-child(5){animation-delay:.4s;}
+
+/* ---------- Media Queries ---------- */
+@media (max-width:400px){
+  .nav-toggle-text{display:none;}
+  .nav-toggle{padding:.5rem .55rem;}
+  .brand{font-size:1.1rem;}
+  .hero-title{font-size:2.8rem;}
+}
+
+@media (min-width:640px){
+  .nav-toggle{display:none;}
+  .nav-links{position:static;display:flex;flex-direction:row;align-items:center;gap:.2rem;padding:0;background:transparent;border:0;box-shadow:none;animation:none;flex:none;}
+  .nav-links a{padding:.5rem .8rem;border:0;font-size:.85rem;border-bottom:0;color:var(--text-soft);}
+  .nav-links a::after{content:"";position:absolute;left:.8rem;right:.8rem;bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease);}
+  .nav-links a:hover{padding-left:.8rem;background:transparent;color:var(--gold);}
+  .nav-links a:hover::after,.nav-links a.is-active::after{transform:scaleX(1);}
+  .nav-links a.is-active{color:var(--text);}
+
+  .section{padding:5rem 0;}
+  .section h2{font-size:2.4rem;}
+  .hero{padding:5rem 0 6rem;}
+  .hero-cta{flex-direction:row;align-items:center;gap:2rem;}
+  .hero-facts{gap:1rem;}
+
+  .cards{grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+  .barbers{grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+  .gallery{grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+  .tile{min-height:12rem;}
+  .testimonials{grid-template-columns:repeat(3,1fr);}
+  
+  .contact-card{grid-template-columns:1fr auto;align-items:center;gap:2rem;}
+  .contact-title{grid-column:1 / -1;}
+
+  .footer-inner{flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem;}
+}
+
+@media (min-width:768px){
+  .fab{display:none;}
+  .site-footer{padding-bottom:3rem;}
+  .selection-bar{left:0;right:0;margin:0 auto;max-width:700px;bottom:2rem;border-radius:8px;border:1px solid var(--gold);padding:1rem 1.5rem;}
+  .selection-inner{padding:0;}
+  body.has-selection .site-footer{padding-bottom:7rem;}
+}
+
+@media (min-width:960px){
+  .section{padding:6rem 0;}
+  .section h2{font-size:2.8rem;}
+  .hero{padding:7rem 0 8rem;}
+  .hero-title{font-size:7rem;}
+  .hero-tag{font-size:1.25rem;}
+  .cards{grid-template-columns:repeat(3,1fr);}
+  .lede{margin-bottom:3rem;}
+  .tile{min-height:14rem;}
+}
+
+/* ==================================================================
+   LIGHT THEME — Parchment & Cognac
+   ================================================================== */
+:root[data-theme="light"]{
+  color-scheme:light;
+  --bg:#F9F6F0;
+  --bg-deep:#EFE8DC;
+  --surface:#FFFFFF;
+  --surface-2:#F4F0E8;
+  --line:#E0D6C5;
+  --line-soft:#EBE3D5;
+  --text:#1A130E;
+  --text-soft:#4A3C31;
+  --text-mute:#887666;
+  
+  --gold:#9B7D3D;
+  --gold-deep:#7A612D;
+  --gold-soft:rgba(155,125,61,.1);
+  --gold-glow:rgba(155,125,61,.3);
+  --on-gold:#FFFFFF;
+
+  --shadow-sm:0 4px 14px rgba(26,19,14,.05);
+  --shadow:0 10px 28px rgba(26,19,14,.08);
+  --shadow-lg:0 20px 46px rgba(26,19,14,.12);
+}
+
+:root[data-theme="light"] .site-header{background:rgba(249,246,240,.9);}
+:root[data-theme="light"] .site-header.is-scrolled{background:rgba(249,246,240,.98);box-shadow:0 10px 30px rgba(26,19,14,.08);}
+:root[data-theme="light"] .site-header::before{opacity:.3;}
+:root[data-theme="light"] .hero{background:radial-gradient(ellipse at 50% 50%, rgba(255,255,255,1) 0%, rgba(239,232,220,1) 100%);}
+:root[data-theme="light"] .hero::after{opacity:.02;}
+:root[data-theme="light"] .hero-scissors{opacity:0.1;}
+:root[data-theme="light"] .hero-scissors svg{stroke:var(--gold);filter:drop-shadow(0 0 10px rgba(155,125,61,0.2));}
+:root[data-theme="light"] .hero-glow{background:radial-gradient(400px circle at var(--mx,50%) var(--my,30%),rgba(155,125,61,.1),transparent 60%);}
+:root[data-theme="light"] .marquee{background:var(--surface);border-color:var(--line);}
+:root[data-theme="light"] .marquee-track span{color:var(--gold);}
+:root[data-theme="light"] .card{background:var(--surface);}
+:root[data-theme="light"] .contact-card{background:linear-gradient(160deg,var(--surface),var(--surface-2));color:var(--text);}
+:root[data-theme="light"] .contact-card a:not(.btn){color:var(--text);}
+:root[data-theme="light"] .contact-card a:not(.btn):hover{color:var(--gold);}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;transition-delay:0ms !important;}
+  .js .reveal{opacity:1;transform:none;}
+  .hero-glow{display:none;}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <nav class="nav" aria-label="Main">
+    <!-- EDIT: barbershop name -->
+    <a class="brand" href="#top">Scissors Grooming</a>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#barbers">Specialists</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></g></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" fill="currentColor"/></svg>
+      </button>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav-links">
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+        <span class="nav-toggle-text">Menu</span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1">
+  <div id="top-sentinel" aria-hidden="true"></div>
+
+  <section class="hero" id="top">
+    <div class="hero-glow" id="heroGlow" aria-hidden="true"></div>
+    
+    <!-- THE SCISSORS BACKGROUND ART -->
+    <div class="hero-scissors" aria-hidden="true">
+      <svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Left Ring & Blade -->
+        <path d="M 60 240 a 25 25 0 1 0 50 0 a 25 25 0 1 0 -50 0" />
+        <line x1="72" y1="222" x2="130" y2="40" />
+        
+        <!-- Right Ring & Blade -->
+        <path d="M 90 240 a 25 25 0 1 0 50 0 a 25 25 0 1 0 -50 0" />
+        <line x1="128" y1="222" x2="70" y2="40" />
+        
+        <!-- Pivot Screw -->
+        <circle cx="100" cy="130" r="6" />
+        <circle cx="100" cy="130" r="2" fill="currentColor" />
+      </svg>
+    </div>
+
+    <div class="wrap hero-inner">
+      <div class="hero-status-row rise">
+        <div class="status" id="status">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span class="status-text" id="statusText">Mon–Sat, 8am–8pm</span>
+          <span class="status-sep" aria-hidden="true">|</span>
+          <span class="status-clock" id="statusClock">Accra</span>
+        </div>
+      </div>
+
+      <!-- EDIT: barbershop name -->
+      <h1 class="hero-title rise">Scissors<br><span>Grooming</span></h1>
+      <p class="hero-tag rise">Precision fades, luxury beard sculpting and hot towel shaves — the standard for the modern gentleman in Accra.</p>
+
+      <div class="hero-cta rise">
+        <!-- EDIT: phone number -->
+        <a class="btn btn-gold" href="https://wa.me/233246625602?text=Hello%20Scissors%20Grooming%2C%20I%20would%20like%20to%20book%20an%20appointment" data-wa-book target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.39.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
+          Book on WhatsApp
+        </a>
+        <p class="hero-note">Walk-ins welcome — reservations preferred.</p>
+      </div>
+
+      <ul class="hero-facts rise">
+        <li>Signature Fades</li>
+        <li>Beard Rituals</li>
+        <li>Hot Towel</li>
+        <li>Mon–Sat 8am–8pm</li>
+      </ul>
+
+      <a class="scroll-cue" href="#menu"><span aria-hidden="true"></span>Explore</a>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Precision Fades</span><span>Beard Sculpting</span><span>Hot Towel Ritual</span><span>Executive Grooming</span><span>Lineups</span><span>Hair Color</span>
+      <span>Precision Fades</span><span>Beard Sculpting</span><span>Hot Towel Ritual</span><span>Executive Grooming</span><span>Lineups</span><span>Hair Color</span>
+    </div>
+  </div>
+
+  <section class="section" id="menu">
+    <div class="wrap">
+      <p class="eyebrow reveal">The Menu</p>
+      <h2 class="reveal">Curated Services</h2>
+      <p class="lede reveal">Select your services to build your appointment. The total is calculated automatically and sent directly to our WhatsApp. Prices are fixed; every detail is confirmed before we begin.</p>
+
+      <!-- EDIT: prices -->
+      <ul class="cards">
+        <li class="card reveal" data-service="Signature Fade" data-price="80">
+          <div class="card-inner">
+            <h3>Signature Fade</h3>
+            <p>A meticulously crafted skin fade, taper, or scissor work. Clean lines, no rushing. Approximately 45 minutes.</p>
+            <div class="card-footer">
+              <span class="price">GH₵ 80</span>
+              <div class="qty" role="group" aria-label="Quantity for Signature Fade">
+                <button type="button" class="qty-btn qty-dec" data-qty-dec disabled aria-label="Remove one Signature Fade">−</button>
+                <span class="qty-count" data-qty-count aria-live="polite">0</span>
+                <button type="button" class="qty-btn qty-inc" data-qty-inc aria-label="Add one Signature Fade">+</button>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="card reveal" data-service="Beard Sculpt & Hot Towel" data-price="120">
+          <div class="card-inner">
+            <h3>Beard Sculpt &amp; Hot Towel</h3>
+            <p>Shape, trim, hot towel and premium oil. The complete beard ritual, finished with a straight razor.</p>
+            <div class="card-footer">
+              <span class="price">GH₵ 120</span>
+              <div class="qty" role="group" aria-label="Quantity for Beard Sculpt and Hot Towel">
+                <button type="button" class="qty-btn qty-dec" data-qty-dec disabled aria-label="Remove one Beard Sculpt and Hot Towel">−</button>
+                <span class="qty-count" data-qty-count aria-live="polite">0</span>
+                <button type="button" class="qty-btn qty-inc" data-qty-inc aria-label="Add one Beard Sculpt and Hot Towel">+</button>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="card reveal" data-service="Executive Lineup" data-price="50">
+          <div class="card-inner">
+            <h3>Executive Lineup</h3>
+            <p>Sharp, precise edges on the hairline and beard line. Swift and flawless.</p>
+            <div class="card-footer">
+              <span class="price">GH₵ 50</span>
+              <div class="qty" role="group" aria-label="Quantity for Executive Lineup">
+                <button type="button" class="qty-btn qty-dec" data-qty-dec disabled aria-label="Remove one Executive Lineup">−</button>
+                <span class="qty-count" data-qty-count aria-live="polite">0</span>
+                <button type="button" class="qty-btn qty-inc" data-qty-inc aria-label="Add one Executive Lineup">+</button>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="card reveal" data-service="Young Gentleman's Cut" data-price="60">
+          <div class="card-inner">
+            <h3>Young Gentleman's Cut</h3>
+            <p>For the little ones. Patient, precise, and a relaxed environment.</p>
+            <div class="card-footer">
+              <span class="price">GH₵ 60</span>
+              <div class="qty" role="group" aria-label="Quantity for Young Gentleman's Cut">
+                <button type="button" class="qty-btn qty-dec" data-qty-dec disabled aria-label="Remove one Young Gentleman's Cut">−</button>
+                <span class="qty-count" data-qty-count aria-live="polite">0</span>
+                <button type="button" class="qty-btn qty-inc" data-qty-inc aria-label="Add one Young Gentleman's Cut">+</button>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="card reveal" data-service="The Full Groom" data-price="180">
+          <div class="card-inner">
+            <h3>The Full Groom</h3>
+            <p>The ultimate reset. A precision cut, beard sculpt, and hot towel ritual combined.</p>
+            <div class="card-footer">
+              <span class="price">GH₵ 180</span>
+              <div class="qty" role="group" aria-label="Quantity for The Full Groom">
+                <button type="button" class="qty-btn qty-dec" data-qty-dec disabled aria-label="Remove one Full Groom">−</button>
+                <span class="qty-count" data-qty-count aria-live="polite">0</span>
+                <button type="button" class="qty-btn qty-inc" data-qty-inc aria-label="Add one Full Groom">+</button>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="card reveal" data-service="Hair Color" data-price="250">
+          <div class="card-inner">
+            <h3>Hair Color</h3>
+            <p>Grey blending, full color or a subtle tint. Executed flawlessly.</p>
+            <div class="card-footer">
+              <span class="price">GH₵ 250</span>
+              <div class="qty" role="group" aria-label="Quantity for Hair Color">
+                <button type="button" class="qty-btn qty-dec" data-qty-dec disabled aria-label="Remove one Hair Color">−</button>
+                <span class="qty-count" data-qty-count aria-live="polite">0</span>
+                <button type="button" class="qty-btn qty-inc" data-qty-inc aria-label="Add one Hair Color">+</button>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <fieldset class="time-pick reveal">
+        <legend class="time-legend">Preferred Time</legend>
+        <div class="time-options">
+          <label class="time-opt"><input type="radio" name="pref-time" value="Any time" checked><span>Any time</span></label>
+          <label class="time-opt"><input type="radio" name="pref-time" value="Morning (8am–12pm)"><span>Morning</span></label>
+          <label class="time-opt"><input type="radio" name="pref-time" value="Afternoon (12pm–4pm)"><span>Afternoon</span></label>
+          <label class="time-opt"><input type="radio" name="pref-time" value="Evening (4pm–8pm)"><span>Evening</span></label>
+        </div>
+        <p class="time-note">This is a preference, not a reservation — we'll confirm the exact time on WhatsApp.</p>
+      </fieldset>
+    </div>
+  </section>
+
+  <section class="section section-tint" id="barbers">
+    <div class="wrap">
+      <p class="eyebrow reveal">The Specialists</p>
+      <h2 class="reveal">Masters of the Craft</h2>
+      <p class="lede reveal">Three specialists, one uncompromising standard.</p>
+
+      <ul class="barbers">
+        <li class="barber-card reveal">
+          <div class="barber-avatar" aria-hidden="true">SG</div>
+          <h3>The Owner</h3>
+          <p class="barber-role">Master Barber</p>
+          <p class="barber-note">The visionary behind the chair. Over a decade of mastery.</p>
+        </li>
+        <li class="barber-card reveal">
+          <div class="barber-avatar" aria-hidden="true">KB</div>
+          <h3>Kojo B.</h3>
+          <p class="barber-role">Beard Specialist</p>
+          <p class="barber-note">Steady hands, sharp blade. The architect of the perfect beard.</p>
+        </li>
+        <li class="barber-card reveal">
+          <div class="barber-avatar" aria-hidden="true">YC</div>
+          <h3>Yaw C.</h3>
+          <p class="barber-role">Lineup & Kids</p>
+          <p class="barber-note">Fast, patient, and exceptionally precise.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="wrap">
+      <p class="eyebrow reveal">The Portfolio</p>
+      <h2 class="reveal">Recent Work</h2>
+      <p class="lede reveal">A glimpse of the standard we uphold daily.</p>
+
+      <!-- EDIT: gallery images — these six blocks are CSS-only placeholders.
+           Swap each <li> for a real photo (an <img> or a background-image) and keep the label text. -->
+      <ul class="gallery">
+        <li class="tile g1 reveal"><div class="tile-content"><svg class="tile-icon" viewBox="0 0 24 24"><path d="M4 19l16-16M8 11l8 8M4 11a3 3 0 1 0 4-4 3 3 0 0 0-4 4zm0 0l4-4M16 19a3 3 0 1 0 4-4 3 3 0 0 0-4 4zm0 0l4-4"/></svg><span>Precision Fade</span></div></li>
+        <li class="tile g2 reveal"><div class="tile-content"><svg class="tile-icon" viewBox="0 0 24 24"><path d="M12 2v20M5 7l14 10M19 7L5 17"/></svg><span>Beard Sculpt</span></div></li>
+        <li class="tile g3 reveal"><div class="tile-content"><svg class="tile-icon" viewBox="0 0 24 24"><path d="M4 5h16v4H4zM7 9v2a5 5 0 0 0 10 0V9"/></svg><span>Lineup</span></div></li>
+        <li class="tile g4 reveal"><div class="tile-content"><svg class="tile-icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg><span>Young Gentleman</span></div></li>
+        <li class="tile g5 reveal"><div class="tile-content"><svg class="tile-icon" viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg><span>Hot Towel</span></div></li>
+        <li class="tile g6 reveal"><div class="tile-content"><svg class="tile-icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM8 20v-6h8v6"/></svg><span>Full Groom</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-tint" id="reviews">
+    <div class="wrap">
+      <p class="eyebrow reveal">The Word</p>
+      <h2 class="reveal">Client Testimonials</h2>
+      <p class="lede reveal">Trusted by those who demand the best.</p>
+
+      <!-- EDIT: testimonials — change the text and names to real reviews later -->
+      <ul class="testimonials">
+        <li class="testimonial-card reveal"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"An exceptional experience. The attention to detail is unmatched in Accra."</p><div class="testimonial-author"><div class="testimonial-avatar">KM</div><div><p class="testimonial-name">Kwame M.</p><p class="testimonial-role">Regular</p></div></div></li>
+        <li class="testimonial-card reveal"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"The atmosphere, the service, the precision. It's not just a haircut, it's a ritual."</p><div class="testimonial-author"><div class="testimonial-avatar">JA</div><div><p class="testimonial-name">Japheth A.</p><p class="testimonial-role">Walk-in</p></div></div></li>
+        <li class="testimonial-card reveal"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"I won't take my son anywhere else. Professional, patient, and perfectly executed."</p><div class="testimonial-author"><div class="testimonial-avatar">NA</div><div><p class="testimonial-name">Nana A.</p><p class="testimonial-role">Parent</p></div></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <p class="eyebrow reveal">The Establishment</p>
+      <h2 class="reveal">Our Philosophy</h2>
+      <div class="about-block reveal"><p>Scissors Grooming is a premium barbershop dedicated to the modern gentleman. We combine classic techniques with modern styling to ensure you leave with a cut that turns heads. Excellence is not an act, but a habit.</p></div>
+    </div>
+  </section>
+
+  <section class="section section-tint" id="hours">
+    <div class="wrap">
+      <p class="eyebrow reveal">The Schedule</p>
+      <h2 class="reveal">Opening Hours</h2>
+      <p class="lede reveal">Six days a week. Closed Sundays.</p>
+      <table class="hours reveal">
+        <caption class="sr-only">Scissors Grooming weekly opening hours</caption>
+        <thead><tr><th scope="col">Day</th><th scope="col">Hours</th></tr></thead>
+        <tbody><tr><th scope="row">Monday – Saturday</th><td>8:00 am – 8:00 pm</td></tr><tr><th scope="row">Sunday</th><td>Closed</td></tr></tbody>
+      </table>
+      <p class="hours-note reveal">Last cut at 7:30 pm so we close on time.</p>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="wrap">
+      <p class="eyebrow reveal">The Location</p>
+      <h2 class="reveal">Visit Us</h2>
+      <p class="lede reveal">Walk in, or message us and we'll reply the same day.</p>
+      <div class="contact-card on-dark reveal">
+        <h3 class="contact-title">Find Us</h3>
+        <address>
+          <ul class="contact-list">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg><!-- EDIT: address --><span>Shop Address, Accra</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg><!-- EDIT: phone number --><a href="tel:+233246625602">+233 24 662 5602</a></li>
+          </ul>
+        </address>
+        <a class="btn btn-gold" href="https://www.google.com/maps/search/?api=1&amp;query=Accra" target="_blank" rel="noopener">Get Directions</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer on-dark">
+  <div class="wrap footer-inner">
+    <!-- EDIT: barbershop name -->
+    <p class="footer-name">Scissors Grooming</p>
+    <p class="footer-copy">© 2026 Scissors Grooming · Accra</p>
+    <!-- EDIT: phone number -->
+    <a href="https://wa.me/233246625602?text=Hello%20Scissors%20Grooming%2C%20I%20would%20like%20to%20book%20an%20appointment" data-wa-book target="_blank" rel="noopener">Book on WhatsApp</a>
+    <!-- EDIT: your name / website -->
+    <p class="footer-copy" style="margin-top: 1rem; font-size: 0.75rem; opacity: 0.6; letter-spacing: 0.1em; text-transform: uppercase;">Website by <a href="#" style="color: inherit;">Saviour</a></p>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp button -->
+<a class="fab" href="https://wa.me/233246625602?text=Hello%20Scissors%20Grooming%2C%20I%20would%20like%20to%20book%20an%20appointment" data-wa-book target="_blank" rel="noopener" aria-label="Book an appointment with Scissors Grooming on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.39.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
+</a>
+
+<div class="selection-bar" id="selectionBar">
+  <div class="selection-inner">
+    <div class="selection-info" aria-live="polite">
+      <span class="selection-count" id="selectionCount">0 services</span>
+      <span class="selection-total" id="selectionTotal">GH₵ 0</span>
+    </div>
+    <div class="selection-actions">
+      <button type="button" class="selection-clear" id="selectionClear">Clear</button>
+      <!-- EDIT: phone number -->
+      <a class="selection-book" href="https://wa.me/233246625602?text=Hello%20Scissors%20Grooming%2C%20I%20would%20like%20to%20book%20an%20appointment" data-wa-book target="_blank" rel="noopener">Book</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var docEl = document.documentElement;
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var canHover = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var supportsIO = 'IntersectionObserver' in window;
+
+  docEl.classList.add('js');
+
+  var themeToggle = document.getElementById('themeToggle');
+  var themeMeta = document.querySelector('meta[name="theme-color"]');
+
+  function applyTheme(theme) {
+    docEl.setAttribute('data-theme', theme);
+    if (themeMeta) themeMeta.setAttribute('content', theme === 'dark' ? '#0A0705' : '#F9F6F0');
+    if (themeToggle) themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+
+  if (themeToggle) {
+    var initial = docEl.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    themeToggle.setAttribute('aria-label', initial === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    themeToggle.addEventListener('click', function () {
+      var current = docEl.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+      var next = current === 'light' ? 'dark' : 'light';
+      applyTheme(next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+  }
+
+  var statusEl = document.getElementById('status');
+  var statusTextEl = document.getElementById('statusText');
+  var statusClockEl = document.getElementById('statusClock');
+
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+
+  function updateStatusAndClock() {
+    var d = new Date();
+    var day = d.getUTCDay();
+    var h = d.getUTCHours();
+    var m = d.getUTCMinutes();
+    var mins = h * 60 + m;
+    var open = 8 * 60;
+    var close = 20 * 60;
+    var isOpen = false;
+    var text;
+
+    if (day === 0) text = 'Closed today · opens Monday 8am';
+    else if (mins < open) text = 'Closed · opens 8am';
+    else if (mins < close) { isOpen = true; text = 'Open now · closes 8pm'; }
+    else if (day === 6) text = 'Closed · opens Monday 8am';
+    else text = 'Closed · opens tomorrow 8am';
+
+    if (statusEl) { statusEl.classList.toggle('is-open', isOpen); statusEl.classList.toggle('is-closed', !isOpen); }
+    if (statusTextEl) statusTextEl.textContent = text;
+    if (statusClockEl) statusClockEl.textContent = 'Accra ' + pad(h) + ':' + pad(m);
+  }
+
+  updateStatusAndClock();
+  setInterval(updateStatusAndClock, 15000);
+
+  var WA_PHONE = '233246625602';
+  var BASE_TEXT = 'Hello Scissors Grooming, I would like to book an appointment';
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.card[data-service]'));
+  var timeRadios = Array.prototype.slice.call(document.querySelectorAll('input[name="pref-time"]'));
+  var waLinks = Array.prototype.slice.call(document.querySelectorAll('[data-wa-book]'));
+  var selectionBar = document.getElementById('selectionBar');
+  var countEl = document.getElementById('selectionCount');
+  var totalEl = document.getElementById('selectionTotal');
+  var clearBtn = document.getElementById('selectionClear');
+  var quantities = {};
+
+  function money(n){ return 'GH₵ ' + n; }
+
+  function getCardState(card) {
+    var name = card.getAttribute('data-service');
+    var price = parseInt(card.getAttribute('data-price'), 10) || 0;
+    var qty = quantities[name] || 0;
+    return { name: name, price: price, qty: qty };
+  }
+
+  function renderCards() {
+    cards.forEach(function (card) {
+      var state = getCardState(card);
+      var count = card.querySelector('[data-qty-count]');
+      var dec = card.querySelector('[data-qty-dec]');
+      if (count) count.textContent = state.qty;
+      if (dec) dec.disabled = state.qty === 0;
+      if (state.qty > 0) card.classList.add('is-picked');
+      else card.classList.remove('is-picked');
+    });
+  }
+
+  function buildText(selected, time) {
+    if (!selected.length) return BASE_TEXT;
+    var lines = ['Hello Scissors Grooming, I would like to book an appointment for:'];
+    selected.forEach(function (item) {
+      var lineTotal = item.price * item.qty;
+      if (item.qty === 1) lines.push('• ' + item.name + ' — ' + money(lineTotal));
+      else lines.push('• ' + item.name + ' ×' + item.qty + ' — ' + money(lineTotal));
+    });
+    var total = selected.reduce(function (sum, item) { return sum + item.price * item.qty; }, 0);
+    lines.push('Total: ' + money(total));
+    if (time && time !== 'Any time') lines.push('Preferred time: ' + time);
+    return lines.join('\n');
+  }
+
+  function updateBooking() {
+    var selected = [];
+    cards.forEach(function (card) {
+      var state = getCardState(card);
+      if (state.qty > 0) selected.push(state);
+    });
+    var time = '';
+    timeRadios.forEach(function (r) { if (r.checked) time = r.value; });
+    var totalItems = selected.reduce(function (sum, item) { return sum + item.qty; }, 0);
+    var totalPrice = selected.reduce(function (sum, item) { return sum + item.price * item.qty; }, 0);
+    var text = buildText(selected, time);
+    var url = 'https://wa.me/' + WA_PHONE + '?text=' + encodeURIComponent(text);
+
+    waLinks.forEach(function (a) { a.setAttribute('href', url); });
+
+    if (totalItems > 0) {
+      document.body.classList.add('has-selection');
+      selectionBar.classList.add('is-active');
+      countEl.textContent = totalItems + (totalItems === 1 ? ' service' : ' services');
+      totalEl.textContent = money(totalPrice);
+    } else {
+      document.body.classList.remove('has-selection');
+      selectionBar.classList.remove('is-active');
+    }
+  }
+
+  function refresh() { renderCards(); updateBooking(); }
+
+  cards.forEach(function (card) {
+    var name = card.getAttribute('data-service');
+    var inc = card.querySelector('[data-qty-inc]');
+    var dec = card.querySelector('[data-qty-dec]');
+    if (inc) inc.addEventListener('click', function () { quantities[name] = (quantities[name] || 0) + 1; refresh(); });
+    if (dec) dec.addEventListener('click', function () { if ((quantities[name] || 0) > 0) { quantities[name] -= 1; refresh(); } });
+  });
+
+  timeRadios.forEach(function (radio) { radio.addEventListener('change', updateBooking); });
+  if (clearBtn) clearBtn.addEventListener('click', function () {
+    cards.forEach(function (card) { quantities[card.getAttribute('data-service')] = 0; });
+    refresh();
+  });
+
+  refresh();
+
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('nav-links');
+  var toggleLabel = toggle ? toggle.querySelector('.nav-toggle-text') : null;
+
+  function closeMenu() {
+    if (!links) return;
+    links.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    if (toggleLabel) toggleLabel.textContent = 'Menu';
+  }
+
+  if (toggle && links) {
+    toggle.addEventListener('click', function () {
+      var open = links.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (toggleLabel) toggleLabel.textContent = open ? 'Close' : 'Menu';
+    });
+    links.addEventListener('click', function (event) { if (event.target.closest('a')) closeMenu(); });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && links.classList.contains('is-open')) { closeMenu(); toggle.focus(); }
+    });
+    document.addEventListener('click', function (event) {
+      if (links.classList.contains('is-open') && !event.target.closest('.nav')) closeMenu();
+    });
+  }
+
+  var header = document.getElementById('siteHeader');
+  var sentinel = document.getElementById('top-sentinel');
+  if (header && sentinel && supportsIO) {
+    new IntersectionObserver(function (entries) {
+      header.classList.toggle('is-scrolled', !entries[0].isIntersecting);
+    }, { threshold: 0 }).observe(sentinel);
+  } else if (header) {
+    header.classList.add('is-scrolled');
+  }
+
+  var reveals = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  if (supportsIO && !reduceMotion) {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('in'); revealObserver.unobserve(entry.target); }
+      });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.12 });
+    reveals.forEach(function (el) { revealObserver.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  var navAnchors = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
+  if (supportsIO && navAnchors.length) {
+    var sections = navAnchors.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+    var activeObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var index = sections.indexOf(entry.target);
+        navAnchors.forEach(function (a, i) { a.classList.toggle('is-active', i === index); });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    sections.forEach(function (s) { if (s) activeObserver.observe(s); });
+  }
+
+  var glow = document.getElementById('heroGlow');
+  var hero = document.getElementById('top');
+  if (glow && hero && canHover && !reduceMotion) {
+    var pending = false, lastEvent = null;
+    hero.addEventListener('pointermove', function (event) {
+      lastEvent = event; if (pending) return; pending = true;
+      window.requestAnimationFrame(function () {
+        var rect = hero.getBoundingClientRect();
+        glow.style.setProperty('--mx', (lastEvent.clientX - rect.left) + 'px');
+        glow.style.setProperty('--my', (lastEvent.clientY - rect.top) + 'px');
+        glow.style.opacity = '1'; pending = false;
+      });
+    }, { passive: true });
+    hero.addEventListener('pointerleave', function () { glow.style.opacity = '0'; });
+  }
+})();
+</script>
+
+</body>
+</html>
